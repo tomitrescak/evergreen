@@ -184,7 +184,7 @@ export default class Autocomplete extends PureComponent {
 
     const filter = itemsFilter || fuzzyFilter(itemToString)
     const items =
-      isFilterDisabled || inputValue.trim() === ''
+      isFilterDisabled || inputValue == null || inputValue.trim() === ''
         ? originalItems
         : filter(originalItems, inputValue)
 
